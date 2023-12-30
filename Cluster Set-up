@@ -1,14 +1,9 @@
-## Agenda: Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers
+Agenda: Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers
 =======================================================
 
 Prerequisite:
 ==========
-
 3 - Ubuntu Serves
-
 1 - Manager  (4GB RAM , 2 Core) t2.medium
-
 2 - Workers  (1 GB, 1 Core)     t2.micro
-
-
 Note: Open Required Ports In AWS Security Groups. For now we will open All trafic.(for practice purpose only)
