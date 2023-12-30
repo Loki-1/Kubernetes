@@ -113,4 +113,4 @@ kubectl get pods --all-namespaces
 
 kubeadm token create --print-join-command
 
-=========In Master Node End====================
+========= In Master Node End ====================
