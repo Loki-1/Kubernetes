@@ -93,7 +93,6 @@ kubeadm init
 #exit root user & exeucte as normal user
 
 exit
-
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
@@ -106,7 +105,6 @@ kubectl get pods -o wide --all-namespaces
 #You will notice from the previous command, that all the pods are running except one: ‘kube-dns’. For resolving this we will install a # pod network. To install the weave pod network, run the following command:
 
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
-
 kubectl get nodes
 
 kubectl get pods --all-namespaces
