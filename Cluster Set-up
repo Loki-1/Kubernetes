@@ -74,6 +74,9 @@ systemctl enable kubelet.service
 systemctl start containerd
 systemctl enable containerd
 
+mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+systemctl restart containerd
 
 ========== COMMON FOR MASTER & SLAVES END =====
 
