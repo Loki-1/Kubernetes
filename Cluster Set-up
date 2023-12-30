@@ -75,5 +75,5 @@ systemctl start containerd
 systemctl enable containerd
 
 
-==========COMMON FOR MASTER & SLAVES END=====
+========== COMMON FOR MASTER & SLAVES END =====
 
