@@ -80,9 +80,8 @@ systemctl restart containerd
 
 ========== COMMON FOR MASTER & SLAVES END =====
 
-===========In Master Node Start====================
+=========== In Master Node Start ====================
 # Steps Only For Kubernetes Master
-
 # Switch to the root user.
 
 sudo su -
