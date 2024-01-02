@@ -19,7 +19,7 @@
 ### cloud-controller-manager (Optional): 
 #### Integrates with cloud provider-specific APIs to manage resources such as Load Balancers and Volumes.
 
-## Worker Nodes (formerly known as "minions"):
+## Worker Nodes (formerly known as "minions"):-
 
 ### Kubelet:
 #### An agent that runs on each node and ensures that containers are running in a Pod. Listens for instructions from the control plane and manages the containers on the node.
