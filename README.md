@@ -6,7 +6,7 @@
 
 ## Nodes:-
 
-## Master Node (Control Plane):
+## Master Node (Control Plane):-
 
 ### kube-apiserver:
 #### The API server is the entry point for all REST commands to the Kubernetes cluster. It processes REST operations, validates them, and updates the corresponding objects in etcd, which serves as the Kubernetes backing store for all cluster data.
