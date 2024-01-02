@@ -8,8 +8,7 @@
 
 ## Master Node (Control Plane):
 
-### kube-apiserver: 
-#### The API server is the entry point for all REST commands to the Kubernetes cluster. It processes REST operations, validates them, and updates the corresponding objects in etcd, which serves as the Kubernetes backing store for all cluster data.
+### kube-apiserver: #### The API server is the entry point for all REST commands to the Kubernetes cluster. It processes REST operations, validates them, and updates the corresponding objects in etcd, which serves as the Kubernetes backing store for all cluster data.
 ### etcd: 
 #### A distributed key-value store that stores the configuration data of the Kubernetes cluster, representing the overall state of the cluster at any given point.
 kube-scheduler: Watches for newly created Pods with no assigned node and selects a node for them to run on based on resource availability.
