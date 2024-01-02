@@ -30,7 +30,7 @@
 ### Pods:
 #### The smallest deployable units in Kubernetes.Represents a single instance of a running process in a cluster and can contain one or more containers
 
-## Explanation of Terminology:
+## Explanation of Terminology:-
 #### The term "Control Plane Components" collectively refers to API Server, etcd, Controller Manager, and Scheduler. The term "Worker Nodes Components" collectively refers to Kubelet, Container Runtime, Kube-proxy, and Pods.
 #### In more traditional terms, the control plane components can be considered as the brains of the operation, making decisions and managing the overall state, while the worker nodes do the actual execution and run the containerized workloads.
 #### It's essential to use the updated terminology and concepts to align with the evolving Kubernetes ecosystem. Always refer to the latest documentation for the most accurate and current information.
