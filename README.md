@@ -28,7 +28,7 @@
 ### Kube-proxy:
 #### Maintains network rules on nodes.Enables communication across the cluster and performs simple load balancing for service endpoints.
 ### Pods:
-#### The smallest deployable units in Kubernetes.Represents a single instance of a running process in a cluster and can contain one or more containers.
+#### The smallest deployable units in Kubernetes.Represents a single instance of a running process in a cluster and can contain one or more containers..
 
 ## Explanation of Terminology:-
 #### The term "Control Plane Components" collectively refers to API Server, etcd, Controller Manager, and Scheduler. The term "Worker Nodes Components" collectively refers to Kubelet, Container Runtime, Kube-proxy, and Pods.
