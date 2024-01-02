@@ -24,8 +24,7 @@
 ### Kubelet:
 #### An agent that runs on each node and ensures that containers are running in a Pod. Listens for instructions from the control plane and manages the containers on the node.
 ### Container Runtime:
-#### The software responsible for running containers.
-Kubernetes is designed to be compatible with various container runtimes, including Docker, containerd, and others.
+#### The software responsible for running containers. Kubernetes is designed to be compatible with various container runtimes, including Docker, containerd, and others.
 Kube-proxy:
 
 Maintains network rules on nodes.
