@@ -14,5 +14,7 @@
 #### A distributed key-value store that stores the configuration data of the Kubernetes cluster, representing the overall state of the cluster at any given point.
 ### kube-scheduler: 
 #### Watches for newly created Pods with no assigned node and selects a node for them to run on based on resource availability.
-kube-controller-manager: Runs controller processes that regulate the state of the cluster, such as Node Controller, Replication Controller, Endpoints Controller, and Service Account & Token Controllers.
-cloud-controller-manager (Optional): Integrates with cloud provider-specific APIs to manage resources such as Load Balancers and Volumes.
+### kube-controller-manager:
+#### Runs controller processes that regulate the state of the cluster, such as Node Controller, Replication Controller, Endpoints Controller, and Service Account & Token Controllers.
+### cloud-controller-manager (Optional): 
+#### Integrates with cloud provider-specific APIs to manage resources such as Load Balancers and Volumes.
