@@ -18,3 +18,19 @@
 #### Runs controller processes that regulate the state of the cluster, such as Node Controller, Replication Controller, Endpoints Controller, and Service Account & Token Controllers.
 ### cloud-controller-manager (Optional): 
 #### Integrates with cloud provider-specific APIs to manage resources such as Load Balancers and Volumes.
+
+## Worker Nodes (formerly known as "minions"):
+
+### Kubelet:
+#### An agent that runs on each node and ensures that containers are running in a Pod. Listens for instructions from the control plane and manages the containers on the node.
+### Container Runtime:
+#### The software responsible for running containers.
+Kubernetes is designed to be compatible with various container runtimes, including Docker, containerd, and others.
+Kube-proxy:
+
+Maintains network rules on nodes.
+Enables communication across the cluster and performs simple load balancing for service endpoints.
+Pods:
+
+The smallest deployable units in Kubernetes.
+Represents a single instance of a running process in a cluster and can contain one or more containers.
