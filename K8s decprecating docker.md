@@ -15,7 +15,7 @@
 ### When it is used as a container runtime for Kubernetes, Docker is just a middle- man between Kubernetes and containerd.
 ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/614592cc-c44d-4da9-9a33-95b0ca95aba1)
 ### However, Kubernetes can use containerd directly as a container runtime, meaning Docker is no longer needed in this middle-man role.
-![image](https://github.com/Loki-1/Kubernetes/assets/134843197/84620e98-27bc-4a72-bb29-455350612b41)
+![image](https://github.com/Loki-1/Kubernetes/assets/134843197/c0c1a67b-8878-4e28-83b0-83a08a9357a3)
 ### What’s the Role of Docker Going Forward?
 #### • Although Docker is not needed as a container runtime in Kubernetes, it still has a role to play in the Kubernetes ecosystem, and in your workflow.
 #### • Docker is still going strong as a tool for developing and building container images, as well as running them locally.
