@@ -10,6 +10,7 @@
 #### Kubernetes is removing support for Docker as a container runtime. Kubernetes
 #### does not actually handle the process of running containers on a machine. Instead, it relies on another piece of software called a container runtime.
   ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/84620e98-27bc-4a72-bb29-455350612b41)
+  
 • The container runtime runs containers on a host, and Kubernetes tells the container runtime on each host what to do.
 • You can actually choose from a variety of options when it comes to what software you want to use as your container runtime when running Kubernetes.
 • Up to now, popular option was to use Docker as the container runtime.
