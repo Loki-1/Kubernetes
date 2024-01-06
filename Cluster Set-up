@@ -176,7 +176,25 @@ kubectl run nginx-demo --image=nginx --port=80
 
 kubectl expose deployment nginx-demo --port=80 --type=NodePort
 
+https://www.mankier.com/1/kubeadm-init
+
 
 Get Node Port details
 =====================
 kubectl get services
+
+
+References: 
+===========
+
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+https://www.mirantis.com/blog/how-install-kubernetes-kubeadm/
+https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker
+https://github.com/containerd/containerd/blob/main/docs/getting-started.md
+https://kubernetes.io/docs/reference/networking/ports-and-protocols/
+https://www.weave.works/docs/net/latest/kubernetes/kube-addon/#install
+https://github.com/skooner-k8s/skooner
+https://www.weave.works/docs/net/latest/kubernetes/kube-addon/#eks
+https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md
