@@ -142,7 +142,9 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 kubectl get pods -o wide --all-namespaces
 
-#You will notice from the previous command, that all the pods are running except one: ‘kube-dns’. For resolving this we will install a # pod network. To install the weave pod network, run the following command:
+#You will notice from the previous command, that all the pods are running except one: ‘kube-dns’. For resolving this we will install a # pod network.
+To install the weave pod network, run the following command:
+First enable these ports on security groups : TCP 6783 and UDP 6783/6784
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 kubectl get nodes
 kubectl get pods --all-namespaces
