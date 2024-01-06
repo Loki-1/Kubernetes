@@ -153,3 +153,30 @@ kubectl get pods --all-namespaces
 kubeadm token create --print-join-command
 
 ========= In Master Node End ====================
+
+Add Worker Machines to Kubernates Master
+=========================================
+
+Copy kubeadm join token from and execute in Worker Nodes to join to cluster
+
+
+
+kubectl commonds has to be executed in master machine.
+
+Check Nodes
+=============
+
+kubectl get nodes
+
+
+Deploy Sample Application
+==========================
+
+kubectl run nginx-demo --image=nginx --port=80
+
+kubectl expose deployment nginx-demo --port=80 --type=NodePort
+
+
+Get Node Port details
+=====================
+kubectl get services
