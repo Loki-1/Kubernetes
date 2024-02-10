@@ -1,17 +1,17 @@
-Agenda: Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers
+# Agenda: Kubernetes Setup Using Kubeadm In AWS EC2 Ubuntu Servers
 =======================================================
 
-Prerequisite:
+### Prerequisite:
 ==========
 3 - Ubuntu Serves
 1 - Manager  (4GB RAM , 2 Core) t2.medium
 2 - Workers  (1 GB, 1 Core)     t2.micro
 Note: Open Required Ports In AWS Security Groups. For now we will open All trafic.(for practice purpose only)
 
-Ports:
+### Ports:
 ======
 
-Control Plane Node :-
+### Control Plane Node :-
 ==================
 Protocol | Direction |	Port Range |	Purpose	              | Used By
    TCP	| Inbound   |	6443	     | Kubernetes API server	  | All
@@ -20,25 +20,25 @@ Protocol | Direction |	Port Range |	Purpose	              | Used By
    TCP	| Inbound	| 10259	     | kube-scheduler	        | Self
    TCP	| Inbound	| 10257	     | kube-controller-manager  | Self
 
-Worker Nodes:-
+### Worker Nodes:-
 ============
 Protocol | Direction |	Port Range  |	Purpose	              | Used By
    TCP	| Inbound   |	10250       | Kubelet API        	  | Self, Control plane
    TCP	| Inbound	| 30000-32767  | NodePort Servicest  	  | All
 
 
-========== COMMON FOR MASTER & SLAVES START ====
+## ========== COMMON FOR MASTER & SLAVES START ====
 
-# First, login as ‘root’ user because the following set of commands need to be executed with ‘sudo’ permissions.
+### First, login as ‘root’ user because the following set of commands need to be executed with ‘sudo’ permissions.
 
 sudo su -
 
-# Turn Off Swap Space
+### Turn Off Swap Space
 
 swapoff -a
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
-Install Containerd
+### Install Containerd
 
 wget https://github.com/containerd/containerd/releases/download/v1.6.16/containerd-1.6.16-linux-amd64.tar.gz
 tar Cxzvf /usr/local containerd-1.6.16-linux-amd64.tar.gz
@@ -48,20 +48,20 @@ mv containerd.service /usr/local/lib/systemd/system/containerd.service
 systemctl daemon-reload
 systemctl enable --now containerd
 
-Install Runc
+### Install Runc
 
 wget https://github.com/opencontainers/runc/releases/download/v1.1.4/runc.amd64
 install -m 755 runc.amd64 /usr/local/sbin/runc
 
-Install CNI
+### Install CNI
 
 wget https://github.com/containernetworking/plugins/releases/download/v1.2.0/cni-plugins-linux-amd64-v1.2.0.tgz
 mkdir -p /opt/cni/bin
 tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.2.0.tgz
 
-Install CRICTL
+### Install CRICTL
 
-VERSION="v1.26.0" # check latest version in /releases page(link :- https://github.com/kubernetes-sigs/cri-tools/releases)
+#### VERSION="v1.26.0" # check latest version in /releases page(link :- https://github.com/kubernetes-sigs/cri-tools/releases)
 wget https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.29.0/crictl-v1.29.0-linux-amd64.tar.gz
 sudo tar zxvf crictl-v1.29.0-linux-amd64.tar.gz -C /usr/local/bin
 rm -f crictl-$VERSION-linux-amd64.tar.gz
@@ -74,7 +74,7 @@ debug: false
 pull-image-on-create: false
 EOF
 
-# Install Required packages and apt keys.
+### Install Required packages and apt keys.
 
 apt-get update -y
 apt-get update && sudo apt-get install -y apt-transport-https curl
@@ -100,13 +100,13 @@ sysctl net.bridge.bridge-nf-call-iptables net.bridge.bridge-nf-call-ip6tables ne
 modprobe br_netfilter
 sysctl -p /etc/sysctl.conf
 
-#Install kubeadm, Kubelet Containerd And Kubectl 
+### Install kubeadm, Kubelet Containerd And Kubectl 
 
 sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 sudo apt-mark hold kubelet kubeadm kubectl
 
 
-# Enable and start kubelet service
+### Enable and start kubelet service
 
 systemctl daemon-reload
 systemctl start kubelet
@@ -118,45 +118,46 @@ mkdir -p /etc/containerd
 containerd config default | sudo tee /etc/containerd/config.toml
 systemctl restart containerd
 
-========== COMMON FOR MASTER & SLAVES END =====
+## ========== COMMON FOR MASTER & SLAVES END =====
 
-=========== In Master Node Start ====================
-# Steps Only For Kubernetes Master
-# Switch to the root user.
+## =========== In Master Node Start ====================
+### Steps Only For Kubernetes Master
+### Switch to the root user.
 
 sudo su -
 
-# Initialize Kubernates master by executing below commond.
+### Initialize Kubernates master by executing below commond.
 
 kubeadm init
 
-#exit root user & exeucte as normal user
+### exit root user & exeucte as normal user
 
 exit
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-Note : above 4 line Important ----you did mistake multiple times here
+#### Note : above 4 line Important ----you did mistake multiple times here
 
-# To verify, if kubectl is working or not, run the following command.
+### To verify, if kubectl is working or not, run the following command.
 
 kubectl get pods -o wide --all-namespaces
 
-#You will notice from the previous command, that all the pods are running except one: ‘kube-dns’. For resolving this we will install a # pod network.
-To install the weave pod network, run the following command:
-First enable these ports on security groups : TCP 6783 and UDP 6783/6784
+#### You will notice from the previous command, that all the pods are running except one: ‘kube-dns’. For resolving this we will install a # pod network.
+#### To install the weave pod network, run the following command:
+
+### First enable these ports on security groups : TCP 6783 and UDP 6783/6784
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 kubectl get nodes
 kubectl get pods --all-namespaces
 
 
-# Get token
+### Get token
 
 kubeadm token create --print-join-command
 
-========= In Master Node End ====================
+### ========= In Master Node End ====================
 
-Add Worker Machines to Kubernates Master
+### Add Worker Machines to Kubernates Master
 =========================================
 
 Copy kubeadm join token from and execute in Worker Nodes to join to cluster
@@ -165,13 +166,13 @@ Copy kubeadm join token from and execute in Worker Nodes to join to cluster
 
 kubectl commonds has to be executed in master machine.
 
-Check Nodes
+### Check Nodes
 =============
 
 kubectl get nodes
 
 
-Deploy Sample Application
+### Deploy Sample Application
 ==========================
 
 kubectl run nginx-demo --image=nginx --port=80
@@ -181,12 +182,12 @@ kubectl expose deployment nginx-demo --port=80 --type=NodePort
 https://www.mankier.com/1/kubeadm-init
 
 
-Get Node Port details
+### Get Node Port details
 =====================
 kubectl get services
 
 
-References: 
+### References: 
 ===========
 
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
