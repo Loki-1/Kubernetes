@@ -121,6 +121,7 @@ systemctl restart containerd
 ## ========== COMMON FOR MASTER & SLAVES END =====
 
 ## =========== In Master Node Start ====================
+
 ### Steps Only For Kubernetes Master
 ### Switch to the root user.
 
@@ -155,7 +156,7 @@ kubectl get pods --all-namespaces
 
 kubeadm token create --print-join-command
 
-### ========= In Master Node End ====================
+## ========= In Master Node End ====================
 
 ### Add Worker Machines to Kubernates Master
 =========================================
