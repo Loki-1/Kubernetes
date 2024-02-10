@@ -3,29 +3,32 @@
 
 ### Prerequisite:
 ==========
+```
 3 - Ubuntu Serves
 1 - Manager  (4GB RAM , 2 Core) t2.medium
 2 - Workers  (1 GB, 1 Core)     t2.micro
 Note: Open Required Ports In AWS Security Groups. For now we will open All trafic.(for practice purpose only)
-
+```
 ### Ports:
 ======
 
 ### Control Plane Node :-
 ==================
+```
 Protocol | Direction |	Port Range |	Purpose	              | Used By
    TCP	| Inbound   |	6443	     | Kubernetes API server	  | All
    TCP	| Inbound	| 2379-2380	  | etcd server client API	  | kube-apiserver, etcd
    TCP	| Inbound	| 10250	     | Kubelet API	           | Self, Control plane
    TCP	| Inbound	| 10259	     | kube-scheduler	        | Self
    TCP	| Inbound	| 10257	     | kube-controller-manager  | Self
-
+```
 ### Worker Nodes:-
 ============
+```
 Protocol | Direction |	Port Range  |	Purpose	              | Used By
    TCP	| Inbound   |	10250       | Kubelet API        	  | Self, Control plane
    TCP	| Inbound	| 30000-32767  | NodePort Servicest  	  | All
-
+```
 
 ## ========== COMMON FOR MASTER & SLAVES START ====
 
@@ -34,11 +37,11 @@ Protocol | Direction |	Port Range  |	Purpose	              | Used By
 sudo su -
 
 ### Turn Off Swap Space
-
+```
 swapoff -a
 
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
-
+```
 ### Install Containerd
 
 wget https://github.com/containerd/containerd/releases/download/v1.6.16/containerd-1.6.16-linux-amd64.tar.gz
