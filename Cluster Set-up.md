@@ -15,7 +15,7 @@ Note: Open Required Ports In AWS Security Groups. For now we will open All trafi
 ### Control Plane Node :-
 ==================
 ```
-Protocol| Direction     |Port Range |	Purpose	              | Used By
+Protocol| Direction     |Port Range   |	Purpose	              | Used By
    TCP	| Inbound       | 6443	     | Kubernetes API server	  | All
    TCP	| Inbound	| 2379-2380	  | etcd server client API	  | kube-apiserver, etcd
    TCP	| Inbound	| 10250	     | Kubelet API	           | Self, Control plane
