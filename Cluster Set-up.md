@@ -27,7 +27,7 @@ Protocol| Direction     |Port Range  |	Purpose	                 | Used By
 ```
 Protocol| Direction |	Port Range  |	Purpose	              | Used By
    TCP	| Inbound   |	10250       | Kubelet API        	  | Self, Control plane
-   TCP	| Inbound	| 30000-32767  | NodePort Servicest  	  | All
+   TCP	| Inbound | 30000-32767  | NodePort Servicest  	  | All
 ```
 
 ## ========== COMMON FOR MASTER & SLAVES START ====
