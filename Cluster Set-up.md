@@ -142,7 +142,7 @@ sudo su -
 ```
 ### Initialize Kubernates master by executing below commond.
 ```
-kubeadm init
+kubeadm init --apiserver-advertise-address=<ControllerVM-PrivateIP> --pod-network-cidr=10.244.0.0/16 
 ```
 ### exit root user & exeucte as normal user
 ```
