@@ -1,5 +1,34 @@
-# Kubernetes Cluster Setup (v1.28.1)
+# Kubernetes Cluster Setup (v1.28.1) - Kubeadm
 
+## Prerequisite:
+================
+```
+3 - Ubuntu Serves
+1 - Manager  (4GB RAM , 2 Core) t2.medium
+2 - Workers  (1 GB, 1 Core)     t2.micro
+```
+### Note: Open Required Ports In AWS Security Groups. For now we will open All trafic.(for practice purpose only)
+
+### Ports:
+==========
+
+#### Control Plane Node :-
+=========================
+```
+Protocol| Direction     |Port Range  |	Purpose	                 | Used By
+   TCP	| Inbound       | 6443	     | Kubernetes API server	 | All
+   TCP	| Inbound	| 2379-2380  | etcd server client API	 | kube-apiserver, etcd
+   TCP	| Inbound	| 10250	     | Kubelet API	         | Self, Control plane
+   TCP	| Inbound	| 10259	     | kube-scheduler	         | Self
+   TCP	| Inbound	| 10257	     | kube-controller-manager   | Self
+```
+#### Worker Nodes:-
+===================
+```
+Protocol| Direction |	Port Range  |	Purpose	                  | Used By
+   TCP	| Inbound   |	10250       | Kubelet API        	  | Self, Control plane
+   TCP	| Inbound   | 30000-32767   | NodePort Servicest  	  | All
+```
 
 sudo apt-get update && apt-get upgrade -y
 ########################################################################################################
