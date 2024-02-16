@@ -45,12 +45,19 @@ Note :- add below lines on both master and worker nodes :-
 <workernode1 ip> worker1
 <workernode2 ip> worker2
 ```
+##   =========== Optional Work end here:- ======================= 
 
-172.31.17.173 master (add this line in that file )
+##   =========== Commands for both master & worker nodes:- ======================= 
+
+#### update server
+```
+sudo -i 
 sudo apt-get update && apt-get upgrade -y
+```
 ########################################################################################################
-Load the Kernel modules on all the nodes
 
+#### Load the Kernel modules on all the nodes
+```
 sudo tee /etc/modules-load.d/containerd.conf <<EOF
 overlay
 br_netfilter
@@ -58,8 +65,10 @@ EOF
 
 sudo modprobe overlay
 sudo modprobe br_netfilter
+```
 
 ########################################################################################################
+
 Set the following Kernel params for K8s
 
 sudo tee /etc/sysctl.d/kubernetes.conf <<EOF
