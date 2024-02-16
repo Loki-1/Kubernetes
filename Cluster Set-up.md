@@ -194,9 +194,10 @@ kubectl get nodes
 kubectl run nginx-demo --image=nginx --port=80
 
 kubectl expose deployment nginx-demo --port=80 --type=NodePort
+```
 
 https://www.mankier.com/1/kubeadm-init
-```
+
 
 ### Get Node Port details
 =====================
