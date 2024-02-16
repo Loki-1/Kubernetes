@@ -1,4 +1,4 @@
-Kubernetes Cluster Setup (v1.27.1)
+# Kubernetes Cluster Setup (v1.28.1)
 
 
 sudo apt-get update && apt-get upgrade -y
