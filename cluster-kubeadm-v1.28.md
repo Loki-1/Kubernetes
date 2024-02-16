@@ -7,7 +7,7 @@
 1 - Manager  (4GB RAM , 2 Core) t2.medium
 2 - Workers  (1 GB, 1 Core)     t2.micro
 ```
-### Note: Open Required Ports In AWS Security Groups. For now we will open All trafic.(for practice purpose only)
+##### Note: Open Required Ports In AWS Security Groups. For now we will open All trafic.(for practice purpose only)
 
 ### Ports:
 ==========
@@ -29,7 +29,25 @@ Protocol| Direction |	Port Range  |	Purpose	                  | Used By
    TCP	| Inbound   |	10250       | Kubelet API        	  | Self, Control plane
    TCP	| Inbound   | 30000-32767   | NodePort Servicest  	  | All
 ```
+### Optional: 
+```
+For better understand :-
 
+On Master node & Woker nodes:-
+```
+sudo -i
+hostnamectl set-hostname master01 --> [if master]
+hostnamectl set-hostname worker01/02 --> [if workers]
+bash
+ip -br a
+vi /etc/hosts
+Note :- add below lines on both master and worker nodes :-
+<masternode ip> master
+<workernode1 ip> worker1
+<workernode2 ip> worker2
+```
+```
+172.31.17.173 master (add this line in that file )
 sudo apt-get update && apt-get upgrade -y
 ########################################################################################################
 Load the Kernel modules on all the nodes
