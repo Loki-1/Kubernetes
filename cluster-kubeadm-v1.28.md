@@ -29,11 +29,10 @@ Protocol| Direction |	Port Range  |	Purpose	                  | Used By
    TCP	| Inbound   |	10250       | Kubelet API        	  | Self, Control plane
    TCP	| Inbound   | 30000-32767   | NodePort Servicest  	  | All
 ```
-### Optional: 
-```
-For better understand :-
+##   ======================   Optional For better understanding:-   =================================== 
 
-On Master node & Woker nodes:-
+#### On Master node & Woker nodes:-
+
 ```
 sudo -i
 hostnamectl set-hostname master01 --> [if master]
@@ -46,7 +45,7 @@ Note :- add below lines on both master and worker nodes :-
 <workernode1 ip> worker1
 <workernode2 ip> worker2
 ```
-```
+
 172.31.17.173 master (add this line in that file )
 sudo apt-get update && apt-get upgrade -y
 ########################################################################################################
