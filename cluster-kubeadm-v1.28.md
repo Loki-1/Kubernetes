@@ -127,6 +127,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 kubeadm init 
 ```
 #### enter all the below as root user - usually it will work as normal user but it is not working in my case so I entered below as root user
+
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
