@@ -86,7 +86,7 @@ sudo sysctl --system
 ########################################################################################################
 
 #### Install containerd run time
-
+```
 sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
 
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/docker.gpg
@@ -95,8 +95,9 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 
 sudo apt update
 sudo apt install -y containerd.io
-
+```
 #####################################################################################################
+
 Configure containerd using systemd as cgroup
 
 containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
