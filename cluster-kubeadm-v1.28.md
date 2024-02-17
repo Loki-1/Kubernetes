@@ -121,7 +121,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ##   =========== Commands for both master & worker nodes end here:- ============= 
 
 ##   =========== Commands for  master  node only:- ============= 
-
+export KUBECONFIG=/etc/kubernetes/admin.conf
 #### Adding kubeadm in repo
 ```
 kubeadm init 
