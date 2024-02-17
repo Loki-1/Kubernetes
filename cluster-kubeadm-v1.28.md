@@ -98,15 +98,15 @@ sudo apt install -y containerd.io
 ```
 #####################################################################################################
 
-Configure containerd using systemd as cgroup
-
+#### Configure containerd using systemd as cgroup
+```
 containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
 
 sudo sed -i 's/SystemdCgroup \= false/SystemdCgroup \= true/g' /etc/containerd/config.toml
 
 sudo systemctl restart containerd
 sudo systemctl enable containerd
-
+```
 ###################################################################################################
 Add apt repository for k8s
 
