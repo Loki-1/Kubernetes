@@ -47,7 +47,7 @@ Note :- add below lines on both master and worker nodes :-
 ```
 ##   =========== Optional Work end here:- ======================= 
 
-##   =========== Commands for both master & worker nodes:- ======================= 
+##   =========== Commands for both master & worker nodes:- ============= 
 
 #### update server
 ```
