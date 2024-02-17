@@ -127,19 +127,73 @@ sudo apt-mark hold kubelet kubeadm kubectl
 kubeadm init 
 ```
 #### enter all the below as root user - usually it will work as normal user but it is not working in my case so I entered below as root user
-
+```
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=/etc/kubernetes/admin.conf
-
+```
 ##################################################################################################
 
 #### Install Pod Network addon:
-
+```
 curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml -O
-
+```
 #### now check cluster once 
 ```
 kubectl get pods -o wide --all-namespaces
+```
+#### Get token
+```
+kubeadm token create --print-join-command
+```
+##   =========== Commands for  master  node end here:- ============= 
+
+##   =========== Commands for  slave  node only:- ============= 
+
+#### Add Worker Machines to Kubernates Master
+
+```
+Copy kubeadm join token from and execute in Worker Nodes to join to cluster
+
+kubectl commonds has to be executed in master machine.
+```
+
+#### Check Nodes
+=============
+```
+kubectl get nodes
+```
+
+#### Deploy Sample Application
+==========================
+```
+kubectl run nginx-demo --image=nginx --port=80
+
+kubectl expose deployment nginx-demo --port=80 --type=NodePort
+```
+
+https://www.mankier.com/1/kubeadm-init
+
+
+#### Get Node Port details
+=====================
+```
+kubectl get services
+```
+
+#### References: 
+===========
+```
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+https://www.mirantis.com/blog/how-install-kubernetes-kubeadm/
+https://kubernetes.io/docs/setup/production-environment/container-runtimes/#docker
+https://github.com/containerd/containerd/blob/main/docs/getting-started.md
+https://kubernetes.io/docs/reference/networking/ports-and-protocols/
+https://www.weave.works/docs/net/latest/kubernetes/kube-addon/#install
+https://github.com/skooner-k8s/skooner
+https://www.weave.works/docs/net/latest/kubernetes/kube-addon/#eks
+https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md
 ```
