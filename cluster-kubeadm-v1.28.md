@@ -121,7 +121,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ##   =========== Commands for both master & worker nodes end here:- ============= 
 
 ##   =========== Commands for  master  node only:- ============= 
-export KUBECONFIG=/etc/kubernetes/admin.conf
+
 #### Adding kubeadm in repo
 ```
 kubeadm init 
@@ -130,8 +130,15 @@ kubeadm init
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+export KUBECONFIG=/etc/kubernetes/admin.conf
 
 ##################################################################################################
-Install Pod Network addon:
+
+#### Install Pod Network addon:
 
 curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml -O
+
+#### now check cluster once 
+```
+kubectl get pods -o wide --all-namespaces
+```
