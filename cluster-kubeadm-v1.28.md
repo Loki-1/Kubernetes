@@ -80,10 +80,11 @@ EOF
 ########################################################################################################
 
 #### Reload the system changes
-
+```
 sudo sysctl --system
-
+```
 ########################################################################################################
+
 Install containerd run time
 
 sudo apt install -y curl gnupg2 software-properties-common apt-transport-https ca-certificates
