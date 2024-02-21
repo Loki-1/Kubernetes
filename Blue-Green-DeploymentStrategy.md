@@ -6,23 +6,24 @@
 ```
        User Traffic
            |
-     +-----v-----+
-     |   Blue    |          +-------------------+
-     |  Environment  +------>   Live Version (Current)   |
-     +-----------+          +-------------------+
-         |  |                   |
-         |  |                   |
-         |  |                   |
-         |  |                   |
-         |  |                   |
-         |  |                   |
-         |  |                   |
-         |  |                   |
-         |  v                   v
-+--------+----+          +-----+--------+
-|   Green    |          |   New Version   |
-| Environment |          |    (Next)         |
-+-------------+          +-------------------+
+           v
+     +--------------+
+     |   Blue       |             +--------------------------+
+     |  Environment |   +------>  | Live Version (Current)   |
+     +--------------+             +--------------------------+
+         |  |                       |
+         |  |                       |
+         |  |                       |
+         |  |                       |
+         |  |                       |
+         |  |                       |
+         |  |                       |
+         |  |                       |
+         |  v                       v
++--------+-----+              +-----+-------------+
+|   Green      |              |   New Version     |
+| Environment  |              |    (Next)         |
++--------------+              +-------------------+
 ```
 This diagram illustrates the blue-green deployment setup. User traffic is initially directed to the blue environment, representing the current live version of the application. Meanwhile, the green environment hosts the new version that you want to deploy.
 
