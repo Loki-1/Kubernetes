@@ -1,5 +1,6 @@
 ## Canary Deployment Strategy:-
 
+
 ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/50bfc3de-83aa-4317-9308-e570dddf75fb)
 
 #### Canary deployment is a strategy used in software deployment, similar to blue-green deployment, but with a more gradual approach to rolling out updates. Let me explain:
@@ -22,7 +23,7 @@ Original Version
 [ Canaries ]  ->  [ Canaries & Early Adopters ]  ->  [ Full Release ]
 ```
 
-**Key Benefits of Canary Deployment:**
+## Key Benefits of Canary Deployment:
 
 **Risk Mitigation:** By initially deploying updates to a small subset of users or servers, the risk of widespread issues is minimized.
 
