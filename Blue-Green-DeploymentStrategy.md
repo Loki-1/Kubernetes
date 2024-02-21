@@ -32,27 +32,28 @@ This approach ensures minimal downtime and reduced risk during the deployment pr
 ```
       User Traffic
            |
-       +---v---+
-       |Load   |
-       |Balancer|
-       +---+---+
+           v
+      +-------------+
+      |  Load       |
+      |  Balancer   |
+      +-------+-----+
            |
            |
            |
            |
            v
 +-----------+-----+
-|   Blue          |                +-------------------+
-| Environment |               |   Live Version (Previous)  |
-+----------------+               +-------------------+
+|   Blue          |              +--------------------------+
+| Environment     |              | Live Version (Previous)  |
++-----------------+              +--------------------------+
            |
            |
            |
            |
            v
 +-----------+-----+
-|   Green        |               +-------------------+
-| Environment |               |   Live Version (Current)   |
-+----------------+               +-------------------+
+|   Green         |                   +----------------------------+
+| Environment     |    +----------->  |   Live Version (Current)   |
++-----------------+                   +----------------------------+
 ```
 
