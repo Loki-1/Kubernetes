@@ -75,7 +75,7 @@ By following the blue-green deployment strategy, you can release new versions of
 
 In terms of blue-green deployment, the concepts of single cluster and multi-cluster deployments can be applied to how the environments are structured and managed. Here's how blue-green deployment might differ between single cluster and multi-cluster setups:
 
-**Single Cluster Blue-Green Deployment:**
+## Single Cluster Blue-Green Deployment:
 
 **Setup:** In a single cluster setup, both the blue and green environments exist within the same cluster.
 **Characteristics:**
@@ -86,7 +86,7 @@ In terms of blue-green deployment, the concepts of single cluster and multi-clus
 **1. **Smaller applications or organizations with limited infrastructure needs.
 **2. **Environments where simplicity and cost-effectiveness are prioritized over fault isolation and scalability.
 
-**Multi-Cluster Blue-Green Deployment:**
+## Multi-Cluster Blue-Green Deployment:
 
 **Setup: **In a multi-cluster setup, the blue and green environments are hosted in separate clusters, potentially in different geographic regions or cloud providers.
 **Characteristics:**
