@@ -89,13 +89,22 @@ In terms of blue-green deployment, the concepts of single cluster and multi-clus
 ## Multi-Cluster Blue-Green Deployment:
 
 **Setup: **In a multi-cluster setup, the blue and green environments are hosted in separate clusters, potentially in different geographic regions or cloud providers.
+
 **Characteristics:**
+
 **Fault isolation:**Each cluster operates independently, providing better isolation and resilience against cluster-wide failures.
+
 **Scalability:** Multi-cluster setups offer more scalability as resources can be scaled independently in each cluster.
+
 **Increased complexity: **Managing multiple clusters adds complexity to the deployment process, networking, and data synchronization between environments.
+
 **Use Cases:**
+
 **1.**Large-scale applications with high availability requirements.
+
 **2.**Applications serving users across different regions or requiring low-latency access.
+
 **3.**Environments where fault isolation and scalability are critical.
+
 
 In both cases, the blue-green deployment strategy remains the same: deploy updates to a separate environment (blue or green), test thoroughly, and switch traffic once the new version is validated. However, the choice between single cluster and multi-cluster setups depends on factors such as the application's size, availability requirements, scalability needs, and organizational preferences for infrastructure management.
