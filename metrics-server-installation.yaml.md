@@ -64,9 +64,24 @@ I paste that configuration flag in components.yaml
 vi components.yaml
 
 ```
-
 ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/de342bc8-a804-4c84-bee4-c21dfcdbfc8c)
 
+#### Installation recheck
 
+Now re-enter below commands
 
+```
+kubectl get all -A        # to check it installed properlly or not
+                          # It will terminate previous installed metrics server pod and create new one - and its working fine
+```
 ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/bc729d49-c989-40f2-9918-aa6eaf44435c)
+
+#### Checking node metrics and pod metrics
+
+```
+Kubectl top nodes # for node metrics
+
+kubectl top pods  # for pod metrics
+```
+![image](https://github.com/Loki-1/Kubernetes/assets/134843197/355fd804-ae7a-4e17-b9e5-dde4736b404c)
+
