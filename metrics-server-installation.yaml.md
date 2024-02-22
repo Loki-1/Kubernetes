@@ -84,4 +84,5 @@ Kubectl top nodes # for node metrics
 kubectl top pods  # for pod metrics
 ```
 ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/355fd804-ae7a-4e17-b9e5-dde4736b404c)
+![image](https://github.com/Loki-1/Kubernetes/assets/134843197/2e7c498b-3cf4-4819-8177-c2da0dd4fe44)
 
