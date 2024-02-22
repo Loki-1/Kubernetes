@@ -51,6 +51,18 @@ kubectl get all -A        # to check it installed properlly or not
 
 ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/6e911f2f-affb-4af9-88bc-f7798eb2eea0)
 
+#### check official documents on github for configuration
+
+```
+I took screenshot of that configurations through official document
+
+![image](https://github.com/Loki-1/Kubernetes/assets/134843197/1fa187f6-9100-49eb-84cd-2ff31f0317f5)
+
+I paste that configuration flag in components.yaml
+
+vi components.yaml
+
+```
 
 ![image](https://github.com/Loki-1/Kubernetes/assets/134843197/de342bc8-a804-4c84-bee4-c21dfcdbfc8c)
 
