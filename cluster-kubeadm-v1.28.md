@@ -140,6 +140,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 #### Install Pod Network addon:
 ```
 curl https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/calico.yaml -O
+kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 ```
 #### now check cluster once 
 ```
