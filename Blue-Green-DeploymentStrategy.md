@@ -114,4 +114,4 @@ In terms of blue-green deployment, the concepts of single cluster and multi-clus
 **3.** Environments where fault isolation and scalability are critical.
 
 
-#### In both cases, the blue-green deployment strategy remains the same: deploy updates to a separate environment (blue or green), test thoroughly, and switch traffic once the new version is validated. However, the choice between single cluster and multi-cluster setups depends on factors such as the application's size, availability requirements, scalability needs, and organizational preferences for infrastructure management..
+#### In both cases, the blue-green deployment strategy remains the same: deploy updates to a separate environment (blue or green), test thoroughly, and switch traffic once the new version is validated. However, the choice between single cluster and multi-cluster setups depends on factors such as the application's size, availability requirements, scalability needs, and organizational preferences for infrastructure management.
